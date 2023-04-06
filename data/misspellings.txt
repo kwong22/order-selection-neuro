@@ -1,0 +1,5 @@
+count 6728 / 429473
+unique 1006 / 7953
+2764 statuspost -> status-post stratusoct status-positive 1
+22 ÿ -> #
+14 rdisease -> rh-disease ra-disease disease 3

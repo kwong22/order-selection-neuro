@@ -1,0 +1,28 @@
+project: order-lm
+program: train-lm.py
+method: bayes
+metric:
+  goal: minimize
+  name: valid_loss
+parameters:
+  epochs:
+    value: 20
+  batch_size:
+    values: [16, 32, 64, 128, 256, 512, 1024]
+  hidden_size:
+    values: [128, 256, 512, 1024]
+  num_layers:
+    values: [1, 2, 4, 8]
+  dropout:
+    values: [0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 0.8]
+  freeze_embeds:
+    values: [True, False]
+  optimizer:
+    values: ['adam', 'sgd']
+  learning_rate:
+    values: [1e-7, 3e-7, 1e-6, 3e-6, 1e-5, 3e-5, 1e-4, 3e-4, 1e-3, 3e-3, 1e-2, 3e-2, 1e-1, 3e-1, 1]
+early_terminate:
+  type: hyperband
+  s: 2
+  eta: 3
+  max_iter: 20
